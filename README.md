@@ -90,7 +90,7 @@ ONLINE-BIDDING/
 │
 ├── .gitignore
 └── README.md
-
+```
 ## Security & Authentication
 
 - JWT-based authentication
@@ -125,30 +125,35 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 JWT_EXPIRE=7d
+```
+##How to Run the Project Locally
 
-How to Run the Project Locally
-
-1. Clone the Repository
+### Clone the Repository
+```
 git clone https://github.com/banu444/BidWise-A-Secure-And-Efficient-Bidding-Platform-For-a-Digital-Marketplace.git
 cd ONLINE-BIDDING
-
-2. Backend Setup
+```
+### Backend Setup
+```
 cd backend
 npm install
 npm run dev
-
-3. Frontend Setup
+```
+### Frontend Setup
+```
 cd frontend
 npm install
 npm run dev
-
-Frontend runs on:
+```
+### Frontend runs on:
+```
 http://localhost:5173
-
-Backend runs on:
+```
+### Backend runs on:
+```
 http://localhost:5000
-
-Future Enhancements
+```
+## Future Enhancements
 
 - Real-time bidding using WebSockets
 - Online payment gateway integration
@@ -156,9 +161,9 @@ Future Enhancements
 - Mobile application support
 - AI-based bid analytics
 
-Developed By
+## Developed By
 
-Pasupala Shaik Hafiza Banu
+###Pasupala Shaik Hafiza Banu
 B.Tech - Computer Science Engineering (AI & ML)
 📧 Email: pasupalahafiza@gmail.com
 🔗 LinkedIn: https://www.linkedin.com/in/hafiza-banu-pasupala-shaik-3a195b32a/
@@ -166,7 +171,7 @@ B.Tech - Computer Science Engineering (AI & ML)
 
 
 
-AFTER ADDING README (NEXT COMMANDS)
+### AFTER ADDING README:
 
 ```bash
 git add README.md
@@ -175,3 +180,4 @@ git push
 
 	--tailwind.config.js
 	--vite.config.js
+```
