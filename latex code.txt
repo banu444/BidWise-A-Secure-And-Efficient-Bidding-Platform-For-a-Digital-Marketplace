@@ -1,0 +1,672 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[a4paper,left=1.5in,right=1.0in,top=1.0in,bottom=1.0in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\renewcommand{\baselinestretch}{1.25}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{.75 cm}
+\usepackage{mathptmx}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{tabto}
+\usepackage{hyperref}
+\usepackage[format=plain,
+            labelfont={bf,it},
+            textfont=it]{caption}
+
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\begin{LARGE}
+				\textbf{BidWise : A Secure and Efficient Bidding Platform for a Digital Marketplace}\\[0.5cm]
+			\end{LARGE}
+			\textbf{\Large }\\
+			\textbf{\Large An Industrial Oriented Mini Project Report}\\[1cm]
+                \textit{{\Large Submitted in partial fulfillment of \\ the requirements for the award of the degree of}}\\[1.0cm]
+			\textup{\Large \textbf{Bachelor of Technology }}\\
+			\textbf{\Large in}\\
+			\textup{\Large \textbf{Computer Science and Engineering (Artificial Intelligence and Machine Learning) }}\\[1cm]
+			\textup{\large Submitted by}\\[.5 cm]
+				
+					\textbf{\Large Pasupala Shaik Hafiza Banu \hspace{1cm} (22SS1A6645)}\\
+                        \textbf{\Large }\\
+                        \textbf{\Large Minumula Srinitha \hspace{3.5cm} (22SS1A6637)}\\
+                        \textbf{\Large }\\
+                        \textbf{\Large Mallela Keshav\hspace{4.5cm} (23SS5A6606)}\\
+                        \textbf{\Large }\\
+                        
+			\textup{\Large Under the guidance of}\\[.5cm]
+			\textbf{\Large Dr. P. Krupa sagar}\\
+                \textup{\large Assisstant Professor}\\[1cm]
+			%COLLEGE LOGO
+			\begin{figure}[h!]
+				\centering 
+				\includegraphics[width=3cm , height=3cm]{logo.png}
+				\centering
+			\end{figure}
+			
+			\textup{\textbf{\Large JNTUH University College of Engineering Sultanpur}}\\[.25cm]	
+			\textup{\large Sultanpur (V), Pulkal (M), Sangareddy (Dist), Telangana-502273}\\[.25cm]
+			\textup{\large June 2025}
+		\end{center}	
+	\end{titlepage}
+ \newpage 
+\pagenumbering{roman}\setcounter{page}{2}
+\addcontentsline{toc}{chapter}{\itshape Certificate}
+\begin{center}
+	{\large\textbf{JNTUH UNIVERSITY COLLEGE OF ENGINEERING SULTANPUR}}\\
+	\textup{\normalsize {Sultanpur(V), Pulkal(M), Sangareddy-502273, Telangana}}\\[1cm]
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width = 3cm , height = 3cm]{logo.png}
+		\centering
+	\end{figure}
+	{\large\textup {Department of Computer Science and Engineering}}\\[1.0cm]
+	{\Large \textbf{\textit{Certificate}}}\\
+	\vspace{0.5cm}
+	
+\end{center}
+\vspace{
+\justify{
+This is to certify that the Industrial Oriented Mini Project Report work entitled \textbf{"BidWise"} is a bonafide work carried out in the sixth semester by \textbf{Pasupala Shaik Hafiza Banu} bearing Roll no.\textbf{22SS1A6645,} \textbf{Minumula Srinitha} bearing Roll no. \textbf{22SS1A6637,}\ \textbf{Mallela Keshav} bearing Roll no. \textbf{23SS5A6606,} in partial fulfillment of the requirements for the degree of BACHELOR OF TECHNOLOGY in COMPUTER SCIENCE AND ENGINEERING(ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING) discipline to  Jawaharlal Nehru Technological University Hyderabad University College of Engineering Sultanpur during the academic year 2024-2025.\\[1.5cm]
+}}
+\textbf{\hspace*{0.5cm}Guide \hspace{9.0cm}   HOD\\}
+\textbf{ Dr. P. Krupa sagar \hspace{7cm}  Dr. G. Narsimha \\}
+{\hspace*{0.1cm} Assistant Professor \hspace{7.6cm}  Professor}
+\\[2.5cm]
+\begin{center}
+   \textbf{External Examiner} 
+\end{center}
+
+\newpage
+\addcontentsline{toc}{chapter}{\itshape Declaration}	
+\begin{center}
+{\LARGE \textbf{\textit{Declaration}}}
+\end{center}	
+\vspace{2cm}
+I hereby declare that the Industrial Oriented Mini Project entitled “\textbf{BidWise}” is a bonafide work carried out by \textbf{Pasupala Shaik Hafiza Banu} bearing Roll no. \textbf{22SS1A6645,} \textbf{Minumula Srinitha} bearing Roll no. \textbf{22SS1A6637,}\textbf{Mallela Keshav} bearing Roll no. \textbf{23SS5A6606,} in partial fulfillment of the requirements for the degree of BACHELOR OF TECHNOLOGY in COMPUTER SCIENCE AND ENGINEERING(ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING) discipline to  Jawaharlal Nehru Technological University Hyderabad University College of Engineering Sultanpur during the academic year 2024-2025. The results embodied in this report have not been submitted to any other University or Institution for the award of any degree or diploma.\\ \\
+\vspace{1.0cm}
+\textbf{
+\begin{table}[ht]
+	\begin{flushright}
+		\begin{tabular}{l r}
+		      \textbf{{\large Pasupala Shaik Hafiza Banu}} & \textbf{{\large (22SS1A6645)}}\\
+                \textbf{\Large }\\
+			\textbf{{\large Minumula Srinitha}} & \textbf{{\large (22SS1A6637)}}\\
+                \textbf{\Large }\\
+			\textbf{{\large Mallela Keshav}} & \textbf{{\large (23SS5A6606)}}\\
+		\end{tabular}
+	\end{flushright}
+\end{table}}
+
+\newpage
+
+\addcontentsline{toc}{chapter}{\itshape Acknowledgement}	
+\begin{center}
+{\LARGE \textbf{\textit{Acknowledgment}}}
+\end{center}
+\vspace{1cm}
+ {I wish to take this opportunity to express my deep gratitude to all those who helped me in various ways during my technical seminar report work. It is my pleasure to acknowledge the help of all those individuals who were responsible for foreseeing the successful completion of my technical seminar report.\\ \\
+\hspace*{35pt}I express my sincere gratitude to \textbf{\large Dr. G. Narsimha, Professor , Head of Department and Principal}, JNTUHUCES for his support during the course period.\\ \\
+\hspace*{35pt}I express my sincere gratitude to \textbf{\large Dr. Y. Raghavender Rao,Professor, Vice Principal}, JNTUHUCES for his support during the course period.\\ \\
+\hspace*{35pt}I am thankful to my Guide \textbf{\large  Dr. P. Krupa sagar,Assistant Professor} for his effective suggestions  during the course period.\\ \\
+\hspace*{35pt}Finally, I express my gratitude with great admiration and respect to my faculty for their moral support and encouragement throughout the course.}\\
+\vspace{0.5cm}
+\textbf{
+\begin{table}[ht]
+	\begin{flushright}
+		\begin{tabular}{l r}
+		      \textbf{{\large Pasupala Shaik Hafiza Banu}} & \textbf{{\large (22SS1A6645)}}\\
+			\textbf{{\large Minumula Srinitha}} & \textbf{{\large (22SS1A6637)}}\\
+			\textbf{{\large Mallela Keshav}} & \textbf{{\large (23SS5A6606)}}\\
+		\end{tabular}
+	\end{flushright}
+\end{table}}
+	
+\newpage
+%\renewcommand{\baselinestretch}{0.1}
+\tableofcontents
+\addtocontents{toc}
+
+\newpage
+\addcontentsline{toc}{chapter}{\itshape Abstract}
+\begin{center}
+{\LARGE \textbf{\textit{Abstract}}}
+\end{center}
+{\large
+The {\large BidWise Online Auction System is a web-based platform designed to create a 
+seamless and transparent environment for conducting online auctions. With the 
+increasing shift towards digital marketplaces, this system provides an efficient 
+and user-friendly solution for both buyers and sellers to engage in competitive 
+bidding. Sellers can list products for auction by specifying details such as item 
+descriptions, starting bids, and auction duration, while buyers can browse 
+available listings and place bids in real time. The system dynamically updates bid 
+values, ensuring a fair and competitive auction process. To enhance security, user 
+authentication mechanisms are in place, preventing unauthorized access and 
+fraudulent bidding. Additionally, automated notifications keep users informed 
+about bid updates, auction expirations, and successful transactions. The platform 
+also maintains a bid history and transaction records, ensuring transparency and 
+accountability. By integrating intuitive navigation, real-time bidding updates, and 
+robust security measures, this project aims to modernize and streamline the 
+traditional auction system, making it more accessible, efficient, and reliable for 
+users in various domains.
+
+
+
+\newpage
+\addcontentsline{toc}{chapter}{\itshape List of Figures}
+\listoffigures
+	
+\newpage
+\pagenumbering{arabic}
+\chapter{INTRODUCTION}
+{\largeThe Evolution of e-commerce and digital transactions has led to a significant transformation in the way goods and services are bought and sold. Traditional auction systems, once limited by geography and physical presence, are now being replaced by dynamic, web-based bidding platforms that offer greater accessibility, scalability, and efficiency. In this digital age, there is a growing demand for secure, transparent, and real-time auction environments that can cater to a wide range of users—buyers, sellers, and administrators alike.
+
+BidWise addresses this demand by providing a modern, feature-rich online bidding platform that enables users to participate in real-time auctions seamlessly. Designed with both usability and security in mind, BidWise allows sellers to list items with defined auction parameters, while buyers can browse active listings, place competitive bids, and track auctions as they unfold. The system ensures fairness and transparency through features like real-time bid updates, user authentication, bid history tracking, and automated auction expiration handling.
+
+Built using a robust tech stack—ReactJS for the frontend, Node.js and Express.js for the backend, and MongoDB for the database—BidWise leverages modern web technologies to deliver a responsive and secure auction experience. Core functionalities such as automated commission tracking, secure login, payment verification, and admin dashboards are integrated to provide end-to-end auction management.
+
+Through BidWise, this project aims to digitize and enhance the traditional auction process by incorporating real-time interactivity, data integrity, and intuitive user experience. It bridges the gap between conventional marketplace practices and next-generation digital commerce, offering a reliable platform for users across diverse domains.}
+
+
+\chapter{SYSTEM ARCHITECTURE}
+{\largeThe architecture of BidWise is meticulously crafted to support modularity, scalability, and real-time responsiveness, while ensuring a secure and user-friendly auction experience. At its core, the system is structured into three primary layers: the Presentation Layer, the Application and Business Logic Layer, and the Data and Persistence Layer. The Presentation Layer, built using ReactJS and Tailwind CSS, delivers a dynamic and responsive interface for users to interact with auctions, manage profiles, and track bidding activity. The Application Logic Layer, developed with Node.js and Express.js, orchestrates the core functionalities such as user authentication, bid handling, auction management, and administrative workflows. The Data Layer, powered by MongoDB, handles all persistent storage requirements including user data, auction listings, bid histories, and commission records. This layered architecture not only promotes separation of concerns but also allows for future scalability, integration of new modules, and seamless maintenance. Real-time bid updates and auction state transitions are supported through efficient API communication, ensuring high performance and system integrity across all operations.}
+
+\section{Overview}
+{\largeThe architecture of BidWise follows a robust client-server model, where the frontend (client) is developed using ReactJS and styled with Tailwind CSS for a responsive and intuitive user experience. The backend server is built using Node.js with Express.js, facilitating seamless communication between the client and the server. All interactions between the frontend and backend occur through RESTful APIs, ensuring platform independence and enabling smooth integration of additional features or third-party services in the future. The system’s backend also incorporates essential middleware for authentication, authorization, and error handling, ensuring secure and reliable operations. Data is persistently stored and managed using MongoDB, allowing for flexible and scalable handling of auctions, user profiles, bids, and commission records. The modular design of the platform makes it maintainable and extensible, supporting the long-term evolution of the project into a comprehensive digital marketplace solution.}  
+
+\section{System Components}
+\subsection{Frontend (Reactjs)}
+{\large The frontend of BidWise is designed to provide an engaging, seamless, and responsive interface that caters to the diverse needs of auction participants, including both bidders and sellers. Developed using ReactJS, a powerful library for building dynamic user interfaces, the frontend emphasizes intuitive navigation, real-time updates, and ease of use across all modern devices—desktops, tablets, and mobile phones.
+
+Key features of the frontend include:}
+\begin{itemize}
+     \item A home dashboard that highlights ongoing, upcoming, and featured auctions..
+    \item Auction listing pages where users can view item details, current highest bids, and auction countdowns.
+    \item A bidding interface that allows users to place and view bids in real-time.
+    \item Authentication forms (Sign Up/Login) for both users and administrators.
+    \item Interactive notifications using react-toastify for alerts on bid updates, errors, or auction conclusions.
+    \item Smooth routing and navigation powered by React Router.
+\end{itemize}
+{\large React handles state management and routing internally and communicates with the backend using asynchronous HTTP requests (e.g., via Axios or Fetch API).}
+
+\subsection{Backend (Node.js + Express + MongoDB)}
+{\large The backend of BidWise is developed using Node.js with the Express.js framework, providing a fast, scalable, and lightweight environment for handling asynchronous server-side operations. It manages all core functionalities of the platform, including auction creation, bidding logic, authentication, user management, commission verification, and automated auction closure.
+
+Key backend functionalities include:}
+
+\begin{itemize}
+    \item /api/users/: For user registration, login, profile management, and role-based access (user/admin).
+
+    \item /api/auctions/: To create new auctions, view active and upcoming auctions, and manage auction items.
+    \item /api/bids/: Enables placing bids, fetching current highest bids, and maintaining bid history.
+
+    \item /api/commissions/: Handles commission submissions, verification, and proof uploads.
+
+    \item /api/admin/: Super admin routes to manage platform-wide operations and verify payments.
+
+    \item Cron jobs (endedAuctionCron.js, verifyCommissionCron.js) automate the closure of expired auctions and track unpaid commissions.
+\end{itemize}
+
+{\large Security and middleware features:}
+\begin{itemize}
+
+    \item JWT authentication ensures secure access to protected routes.
+
+    \item Input validation prevents malformed requests and data tampering.
+
+    \item Custom middleware for error handling, logging, and tracking auction status in real-time.
+
+    \item Role-based authorization restricts admin and user functionalities appropriately..
+\end{itemize}
+\section{Deployment Considerations}
+\begin{itemize}
+    \item Web Server: The Node.js backend can be deployed using PM2 or Node’s native cluster module, often served behind a Nginx reverse proxy for better scalability and performance.
+
+    \item Database: MongoDB Atlas or self-hosted MongoDB instances can be used to store auction items, bids, user data, and commission records efficiently in a flexible NoSQL format.
+
+    \item Cloud Hosting: Cloud platforms like Render, Vercel (for frontend), Heroku, AWS EC2, or DigitalOcean can be used to deploy both frontend and backend applications for global access.
+
+    \item Security: The platform enforces HTTPS encryption, JWT-based authentication, input validation, rate-limiting, and CORS policies to protect against common vulnerabilities such as XSS, CSRF, and brute-force attacks.
+
+    \item Environment Management: Environment variables are stored securely using .env files, and platform-specific secrets management tools (e.g., Heroku Config Vars, AWS Secrets Manager) can be used in production.
+\end{itemize}
+
+\section{Scalability and Extensibility}
+{\large The modular and well-structured architecture of BidWise is designed with scalability and future enhancements in mind. Each component—frontend, backend, and database—operates independently yet cohesively, allowing seamless upgrades and feature expansion. Additional functionalities such as:}
+\begin{itemize}
+    \item Multi-role access controls (e.g., moderators, admins, bidders, sellers),
+
+    \item Real-time bidding and auction updates via WebSockets,
+
+    \item Integration of payment gateways and escrow services,
+
+    \item Analytics dashboards for user behavior and bidding trends,
+
+    \item Multi-language and region-specific support
+\end{itemize}
+
+{\large can be incorporated without affecting the core functionalities or existing user data.}
+
+{\large In summary, the BidWise system architecture not only supports current auction processes effectively but also lays a flexible and robust foundation for evolving into a more advanced digital marketplace. This foresight enables the platform to adapt to increasing user demand, feature complexity, and technological evolution with minimal friction.}
+
+\chapter{METHODOLOGY}
+
+{\large The development of BidWise followed a structured and iterative methodology to ensure the creation of a secure, user-friendly, and scalable online bidding platform. The methodology encompassed several key stages, from requirement analysis to final deployment, with regular feedback cycles to improve functionality and usability. }
+
+\section{Requirement Analysis}
+
+{\large The initial phase involved gathering and analyzing requirements from both buyer and seller perspectives. Key goals included:}
+\begin{itemize}
+    \item Real-time auction and bidding system.
+
+    \item Secure user authentication and authorization.
+
+    \item Role-based access control (Users, Admins, Super Admin).
+
+    \item Easy-to-navigate frontend interface.
+
+    \item Historical and transactional record-keeping.
+\end{itemize}
+
+\section{System Design}
+
+{\large A modular and layered architecture was designed to separate concerns:}
+\begin{itemize}
+    \item Frontend built with ReactJS and TailwindCSS for responsive UI.
+
+    \item Backend developed using Node.js and Express.js for RESTful APIs.
+
+    \item Database managed using MongoDB for flexible schema design.
+
+    \item Middleware and cron jobs used for auction ending automation and commission verification.
+
+\end{itemize}
+\subsection{UML}
+{\large UML (Unified Modeling Language) is used to visually represent the structure and behavior of the BidWise online auction system. It helps in designing system components like users, auctions, and bidding interactions effectively and clearly.}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{case.png}
+    \caption{\textit{Case Diagram of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{class.png}
+    \caption{\textit{Class Diagram of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ER.png}
+    \caption{\textit{ER Diagram of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+{\large }
+\section{Technology Stack}
+\begin{itemize}
+    \item Frontend: ReactJS, JSX, Tailwind CSS, Redux Toolkit
+
+    \item Backend: Node.js, Express.js, JWT
+
+    \item Database: MongoDB (with Mongoose ODM)
+
+    \item Version Control: Git & GitHub
+
+    \item Other Tools: EmailJS, Chart.js, Toastify, Lucide-React for icons
+
+\end{itemize}
+\section{Development Phases}
+\subsection{Frontend Development}
+\begin{itemize}
+    \item Designed reusable UI components like cards, graphs, and form controls.
+
+    \item Integrated navigation, authentication forms, dashboards, and bid displays.
+
+    \item Utilized Redux Toolkit for state management and API interaction.
+
+\end{itemize}
+\subsection{Backend Development}
+\begin{itemize}
+    \item Created models for Users, Auctions, Bids, and Commissions.
+
+    \item Implemented RESTful routes for item creation, bid placement, user login, and auction queries.
+
+    \item Developed middleware for authentication, error handling, and auction timers.
+
+\end{itemize}
+\subsection{Automation and Cron Jobs}
+\begin{itemize}
+    \item Automatically end auctions when time expires.
+
+    \item Trigger commission verification processes.
+
+    \item Ensured these jobs run reliably in the background and update database statuses in real time.
+
+\end{itemize}
+\section{Integration}
+\begin{itemize}
+    \item Frontend and backend were integrated using Axios for asynchronous API communication.Real-time updates were managed with frequent API polling (extendable to WebSocket in the future).
+
+\end{itemize}
+\section{Testing and Debugging}
+\begin{itemize}
+    \item Component-level testing for UI using React DevTools.
+
+    \item Backend endpoint testing using Postman and Swagger.
+
+    \item Manual test cases for full workflows (register → bid → auction ends → commission verification).
+
+\end{itemize}
+\section{Deployment}
+\begin{itemize}
+    \item Project is structured for deployment on cloud platforms like Vercel (frontend) and Render/Heroku (backend).
+
+    \item Uses environment variables for secure API key management and deployment flexibility.
+
+\end{itemize}
+\chapter{IMPLEMENTATION}
+{\large }The implementation of BidWise involved the development of a full-stack web application using the MERN (MongoDB, Express, React, Node.js) stack. The system was implemented in clearly defined layers to separate concerns, improve maintainability, and ensure scalability.
+{\large }
+\begin{itemize}
+App.jsx\\
+import React, \{ useEffect \} from "react";\\
+import \{ BrowserRouter as Router, Routes, Route \} from "react-router-dom";\\
+import SideDrawer from "./layout/SideDrawer";\\
+import Home from "./pages/Home";\\
+import \{ ToastContainer \} from "react-toastify";\\
+import "react-toastify/dist/ReactToastify.css";\\
+import SignUp from "./pages/SignUp";\\
+import Login from "./pages/Login";\\
+import SubmitCommission from "./pages/SubmitCommission";\\
+import \{ useDispatch \} from "react-redux";\\
+import \{ fetchLeaderboard, fetchUser \} from "./store/slices/userSlice";\\
+import HowItWorks from "./pages/HowItWorks";\\
+import About from "./pages/About";\\
+import \{ getAllAuctionItems \} from "./store/slices/auctionSlice";\\
+import Leaderboard from "./pages/Leaderboard";\\
+import Auctions from "./pages/Auctions";\\
+import AuctionItem from "./pages/AuctionItem";\\
+import CreateAuction from "./pages/CreateAuction";\\
+import ViewMyAuctions from "./pages/ViewMyAuctions";\\
+import ViewAuctionDetails from "./pages/ViewAuctionDetails";\\
+import Dashboard from "./pages/Dashboard/Dashboard";\\
+import Contact from "./pages/Contact";\\
+import UserProfile from "./pages/UserProfile";\\
+\\
+const App = () =\textgreater \{\\
+  const dispatch = useDispatch();\\
+  useEffect(() =\textgreater \{\\
+    dispatch(fetchUser());\\
+    dispatch(getAllAuctionItems());\\
+    dispatch(fetchLeaderboard());\\
+  \}, []);\\
+  return (\\
+    \textless Router \textgreater\\
+      \textless SideDrawer / \textgreater\\
+      \textless Routes \textgreater\\
+        \textless Route path="/" element={<\textless Home / \textgreater} / \textgreater\\
+        \textless Route path="/sign-up" element={\textless SignUp / \textgreater} / \textgreater\\
+        \textless Route path="/login" element={\textless Login / \textgreater} / \textgreater\\
+        \textless Route path="/submit-commission" element={\textless SubmitCommission / \textgreater} / \textgreater\\
+        \textless Route path="/how-it-works-info" element={\textless HowItWorks / \textgreater} / \textgreater\\
+        \textless Route path="/about" element={\textless About / \textgreater} / \textgreater\\
+        \textless Route path="/leaderboard" element={\textless Leaderboard / \textgreater} / \textgreater\\
+        \textless Route path="/auctions" element={\textless Auctions / \textgreater} / \textgreater\\
+        \textless Route path="/auction/item/:id" element={\textless AuctionItem / \textgreater} / \textgreater\\
+        \textless Route path="/create-auction" element={\textless CreateAuction / \textgreater} / \textgreater\\
+        \textless Route path="/view-my-auctions" element={\textless ViewMyAuctions / \textgreater} / \textgreater\\
+        \textless Route path="/auction/details/:id" element={\textless ViewAuctionDetails / \textgreater} / \textgreater\\
+        \textless Route path="/dashboard" element={\textless Dashboard / \textgreater} / \textgreater\\
+        \textless Route path="/contact" element={\textless Contact / \textgreater} / \textgreater\\
+        \textless Route path="/me" element={\textless  UserProfile / \textgreater} / \textgreater\\
+      \textless /Routes \textgreater\\
+      \textless ToastContainer position="top-right" / \textgreater\\
+    \textless /Router \textgreater\\
+  );\\
+\};\\
+
+export default App;\\
+\\
+App.js\\
+import \{ config \} from "dotenv";\\
+import express from "express";\\
+import cors from "cors";\\
+import cookieParser from "cookie-parser";\\
+import fileUpload from "express-fileupload";\\
+import \{ connection \} from "./database/connection.js";\\
+import \{ errorMiddleware \} from "./middlewares/error.js";\\
+import userRouter from "./router/userRoutes.js";\\
+import auctionItemRouter from "./router/auctionItemRoutes.js";\\
+import bidRouter from "./router/bidRoutes.js";\\
+import commissionRouter from "./router/commissionRouter.js";\\
+import superAdminRouter from "./router/superAdminRoutes.js";\\
+import \{ endedAuctionCron \} from "./automation/endedAuctionCron.js";\\
+import \{ verifyCommissionCron \} from "./automation/verifyCommissionCron.js";\\
+\\
+const app = express();\\
+config(\{\\
+  path: "./config/config.env",\\
+\});\\
+\\
+app.use(\\
+  cors(\{\\
+    origin: [process.env.FRONTEND\_URL],\\
+    methods: ["POST", "GET", "PUT", "DELETE"],\\
+    credentials: true,\\
+  \})\\
+);\\
+\\
+app.use(cookieParser());\\
+app.use(express.json());\\
+app.use(express.urlencoded({ extended: true }));\\
+app.use(\\
+  fileUpload(\{\\
+    useTempFiles: true,\\
+    tempFileDir: "/tmp/",\\
+  \})\\
+);\\
+\\
+app.use("/api/v1/user", userRouter);\\
+app.use("/api/v1/auctionitem", auctionItemRouter);\\
+app.use("/api/v1/bid", bidRouter);\\
+app.use("/api/v1/commission", commissionRouter);\\
+app.use("/api/v1/superadmin", superAdminRouter);\\
+\\
+endedAuctionCron();\\
+verifyCommissionCron();\\
+connection();\\
+app.use(errorMiddleware);\\
+\\
+export default app;\\
+\end{itemize}
+\section{User Authentication and Authorization}
+\subsection{User Registration/Login}
+\begin{itemize}
+    \item Implemented using JWT (JSON Web Tokens) for session management.
+
+    \item Passwords are securely hashed using bcrypt.
+
+    \item Role-based access control allows for standard users, auctioneers, and super admins.
+
+\end{itemize}
+\subsection{Protected Routes}
+\begin{itemize}
+    \item Middleware (auth.js) was implemented to protect routes and validate tokens.
+
+    \item Admin/super admin privileges are verified through user roles.
+\end{itemize}
+\section{Auction Item Management}
+\subsection{Auction Creation}
+\begin{itemize}
+    \item Users with seller privileges can create auction items via the /createAuction page.
+
+    \item Fields include title, description, base price, end time, and image upload.
+
+\end{itemize}
+\subsection{Data Handling}
+\begin{itemize}
+    \item Backend uses auctionSchema.js to define MongoDB schema.
+
+    \item Input validation and error handling are managed via middleware (catchAsyncErrors.js, error.js).
+\end{itemize}
+\section{Bidding Logic}
+\subsection{Bid Placement}
+\begin{itemize}
+    \item Users place bids through the item detail page.
+
+    \item Bids are validated against current highest bids using bidController.js.
+
+\end{itemize}
+\subsection{Live Bid Updates}
+\begin{itemize}
+    \item The system polls the server to fetch updated bid data (alternatively extendable with WebSockets).
+
+    \item bidSlice.js and Redux handle bid state on the frontend.
+\end{itemize}
+\subsection{Bid Storage}
+\begin{itemize}
+    \item Each bid is stored in bidSchema.js, maintaining a history of all bids per item.
+\end{itemize}
+\section{Auction Expiry & Automation}
+\subsection{Cron Jobs}
+\begin{itemize}
+    \item Implemented with node-cron to automatically end auctions when the time expires (endedAuctionCron.js).
+
+    \item Updates auction status and notifies the highest bidder.
+
+\end{itemize}
+\subsection{Commission Verification}
+\begin{itemize}
+    \item Another cron job (verifyCommissionCron.js) checks for submitted payment proofs.
+
+    \item Admins can manually verify these through a dashboard view.
+\end{itemize}
+\section{Admin & Super Admin Modules}
+\subsection{Dashboard Features}
+\begin{itemize}
+    \item Super admins can view and manage users, verify commissions, and track platform activity.
+
+    \item Graphs (via Chart.js) show user statistics and commission summaries.
+
+\end{itemize}
+\subsection{Security}
+\begin{itemize}
+    \item Admin-only routes are strictly protected.
+
+    \item Sensitive actions such as auction deletion or user banning require elevated privileges.
+\end{itemize}
+\section{Notifications and Feedback}
+\subsection{Toast Notifications}
+\begin{itemize}
+    \item Implemented via react-toastify to provide real-time feedback on actions like bidding success or login errors..
+
+\end{itemize}
+\subsection{Email Notifications}
+\begin{itemize}
+    \item sendEmail.js and EmailJS are used to send confirmation emails for registrations, auction wins, and bid updates.
+\end{itemize}
+\section{UI/UX Implementation}
+\subsection{Component Design}
+\begin{itemize}
+    \item Reusable components like Card.jsx, H1.jsx, and Spinner.jsx ensure consistency and performance.
+
+    \item Tailwind CSS provides responsive styling across all screen sizes.
+
+\end{itemize}
+\subsection{Routing}
+\begin{itemize}
+    \item Managed by react-router-dom, supporting nested routes and private pages.
+\end{itemize}
+\section{Data Management & State Handling}
+\subsection{Redux Toolkit}
+\begin{itemize}
+    \item Used for centralized state management.
+
+    \item auctionSlice.js, bidSlice.js, and userSlice.js maintain application state across the UI.
+\end{itemize}
+\subsection{Axios}
+\begin{itemize}
+    \item Used for frontend-backend communication, with error handling in each request for robust UX.
+\end{itemize}
+\section{ Deployment}
+\begin{itemize}
+    \item Frontend: Prepared for deployment using Vite, hosted via Vercel or Netlify.
+
+    \item Backend: Node server ready for deployment on Render, Railway, or Heroku.
+
+    \item Environment variables are used for API keys, database URIs, and EmailJS credentials.
+\end{itemize}
+\chapter{RESULTS}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{r0.png}
+    \caption{\textit{Database Connection of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{r1.png}
+    \caption{\textit{Registration of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{r2.png}
+    \caption{\textit{Dashboard of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{r3.png}
+    \caption{\textit{Profile Details of the User in BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{r4.png}
+    \caption{\textit{About Us Page of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{r5.png}
+    \caption{\textit{Leaderboard of the BidWise Bidding System.}}
+    \label{fig:class-diagram}
+\end{figure}
+
+{\large }
+
+\newpage
+%\addcontentsline{toc}{chapter}{CONCLUSION}
+%\begin{flushleft}
+%	\huge \textbf{CONCLUSION}\\[1.0cm]
+%\end{flushleft}
+\addcontentsline{toc}{chapter}{CONCLUSION}
+\begin{center}
+	\Large \textbf{CONCLUSION}
+\end{center}
+
+{\large }In conclusion, the successful implementation of our secure online bidding platform demonstrates the potential of modern web technologies in transforming digital marketplaces. The platform ensures user trust and data integrity through robust security mechanisms while providing real-time bidding functionality that enhances user engagement and competitiveness. The automation of the auction lifecycle—from item listing to final bid acceptance—minimizes manual intervention and ensures transparency. Furthermore, the system's modular architecture and scalable design make it adaptable for future enhancements, such as mobile integration, AI-based bid recommendations, and analytics dashboards. Overall, this project not only meets the current requirements of a digital auction system but also lays a strong foundation for future expansion and innovation in the e-commerce and bidding domain.
+\newpage
+
+\addcontentsline{toc}{chapter}{REFERENCES}
+\renewcommand\bibname{\begin{center}
+	\Large \textbf\textbf{REFERENCES}
+\end{center}}
+
+\begin{thebibliography}
+\textit{[1] React.js:  }
+{\url {https://reactjs.org/}}\\
+\\
+\textit{[2] MongoDB: }
+{\url {https://www.mongodb.com/docs}}\\
+\\
+\textit{[3] Node.js:  }{\url{https://ai.google.dev}}\\
+\\
+\textit{[4] Vite:  }{\url {https://vitejs.dev/}}\\
+\\
+\textit{[5] chart.js:  }{\url{https://www.chartjs.org/}}
+\end{thebibliography}
+\end{document}
