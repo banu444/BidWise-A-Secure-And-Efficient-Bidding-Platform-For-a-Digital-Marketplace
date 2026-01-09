@@ -162,13 +162,13 @@ http://localhost:5000
 - AI-based bid analytics
 
 ## Developed By
-
-###Pasupala Shaik Hafiza Banu
+```
+Pasupala Shaik Hafiza Banu
 B.Tech - Computer Science Engineering (AI & ML)
 📧 Email: pasupalahafiza@gmail.com
 🔗 LinkedIn: https://www.linkedin.com/in/hafiza-banu-pasupala-shaik-3a195b32a/
 💻 GitHub: https://github.com/banu444
-
+```
 
 
 ### AFTER ADDING README:
